@@ -32,8 +32,8 @@ int main()
 	while (true) {
 		// 展示菜单
 		wm.showMenu();
-		cout << "请输入您的选择: " << endl;
-		cin >> choice;
+		std::cout << "请输入您的选择: " << std::endl;
+		std::cin >> choice;
 
 		switch (choice) {
 		case 0:    // 退出系统

@@ -12,15 +12,15 @@
 #define BOSS_H
 #include <iostream>
 #include "worker.h"
-using namespace std;
 
+class Boss;
 class Boss: public Worker
 {
 public:
-	Boss(int id,string name,int deptId);
+	Boss(int id, std::string name, int deptId);
 
 	// 获取职工岗位信息
-	string getDeptName();
+	std::string getDeptName();
 
 	// 显示个人信息
 	void showInfo();

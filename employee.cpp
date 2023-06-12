@@ -18,15 +18,15 @@ Employee::Employee(int id, std::string name, int deptId)
 
 void Employee::showInfo()
 {
-	cout << "职工编号: " << this->m_Id
-		 << "\t职工姓名: " << this->m_Name
-		 << "\t职工岗位: " << this->getDeptName()
-		 << "\t岗位职责: 完成经理交给的任务" << endl;
+	std::cout << "职工编号: " << this->m_Id
+			  << "\t职工姓名: " << this->m_Name
+			  << "\t职工岗位: " << this->getDeptName()
+			  << "\t岗位职责: 完成经理交给的任务" << std::endl;
 }
 
-string Employee::getDeptName()
+std::string Employee::getDeptName()
 {
-	string deptName = "员工";
+	std::string deptName = "员工";
 	return deptName;
 }
 

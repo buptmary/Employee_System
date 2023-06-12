@@ -11,19 +11,16 @@
 #ifndef WORKER_H
 #define WORKER_H
 #include <iostream>
-#include "workerManager.h"
 
-using namespace std;
 
+class WorkerManager; // 添加前向声明
 
 // 职工抽象基类
 class Worker
 {
-	friend void WorkerManager::save();
-
-public:
+protected:
 	int m_Id;        // 职工编号
-	string m_Name;   // 职工姓名
+	std::string m_Name;   // 职工姓名
 	int m_DeptId;    // 职工所在部门名称编号
 
 
@@ -32,7 +29,10 @@ public:
 	virtual void showInfo() = 0;
 
 	// 获取岗位名称
-	virtual string getDeptName() = 0;
+	virtual std::string getDeptName() = 0;
+
+	// 声明 WorkerManager 类的 save() 方法为友元
+	friend class WorkerManager;
 
 };
 

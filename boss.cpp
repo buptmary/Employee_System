@@ -17,16 +17,16 @@ Boss::Boss(int id, std::string name, int deptId)
 	this->m_DeptId = deptId;
 }
 
-string Boss::getDeptName()
+std::string Boss::getDeptName()
 {
-	string deptName = "老板";
+	std::string deptName = "老板";
 	return deptName;
 }
 
 void Boss::showInfo()
 {
-	cout << "职工编号: " << this->m_Id
-		 << "\t职工姓名: " << this->m_Name
-		 << "\t职工岗位: " << this->getDeptName()
-		 << "\t岗位职责: 管理公司所有事务" << endl;
+	std::cout << "职工编号: " << this->m_Id
+			  << "\t职工姓名: " << this->m_Name
+			  << "\t职工岗位: " << this->getDeptName()
+			  << "\t岗位职责: 管理公司所有事务" << std::endl;
 }

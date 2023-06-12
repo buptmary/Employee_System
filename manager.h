@@ -11,19 +11,19 @@
 #define MANAGER_H
 #include <iostream>
 #include "worker.h"
-using namespace std;
 
+class Manger;
 class Manager: public Worker
 {
 public:
 	// 构造函数
-	Manager(int id, string name, int deptId);
+	Manager(int id, std::string name, int deptId);
 
 	// 显示个人信息
 	void showInfo();
 
 	// 获取职工岗位信息
-	string getDeptName();
+	std::string getDeptName();
 
 };
 

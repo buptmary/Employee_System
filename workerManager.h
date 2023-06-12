@@ -7,14 +7,13 @@
 
 #include <iostream>
 #include <fstream>
-using namespace std;
 
 #include "worker.h"
 #include "employee.h"
 #include "manager.h"
 #include "boss.h"
 
-#define FILENAME "worker_file.txt"
+#define FILENAME "../worker_file.txt"
 
 class WorkerManager
 {

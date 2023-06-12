@@ -12,19 +12,19 @@
 #define EMPLOYEE_H
 #include <iostream>
 #include "worker.h"
-using namespace std;
 
+class Employee;
 class Employee: public Worker
 {
 public:
 	// 构造函数
-	Employee(int id, string name, int deptId);
+	Employee(int id, std::string name, int deptId);
 
 	// 显示个人信息
 	void showInfo();
 
 	// 获取职工岗位名称
-	string getDeptName();
+	std::string getDeptName();
 };
 
 #endif //EMPLOYEE_H
