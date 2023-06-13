@@ -481,6 +481,22 @@ int WorkerManager::getWorkerNum()
 	return num;
 }
 
+int WorkerManager::getMaxId()
+{
+	int maxId = -1;
+	if (this->m_FileIsEmpty) {
+		std::cout << "文件不存在或记录为空！" << std::endl;
+	}
+	else {
+		for (int i = 0; i < this->m_WorkNum; i++) {
+			if (this->m_WorkArray[i]->m_Id > maxId) {
+				maxId = this->m_WorkArray[i]->m_Id;
+			}
+		}
+	}
+	return maxId;
+}
+
 void WorkerManager::initWorker()
 {
 	std::ifstream ifs;

@@ -55,6 +55,9 @@ public:
 	// 统计人数
 	int getWorkerNum();
 
+	// 找到最大ID
+	int getMaxId();
+
 	// 初始化职工
 	void initWorker();
 
@@ -63,8 +66,8 @@ public:
 
 	// 职工排序
 	void sortWorker();
-	void bubbleSortA();
-	void bubbleSortD();
+	void bubbleSortA();        // 冒泡升序
+	void bubbleSortD();        // 冒泡降序
 
 	// 退出程序
 	void exitSystem();
