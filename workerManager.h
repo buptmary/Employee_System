@@ -24,6 +24,9 @@ public:
 	// 员工数组的指针
 	Worker **m_WorkArray;
 
+	// worker_file.txt 文件是否为空标志
+	bool m_FileIsEmpty;
+
 public:
 	// 构造函数
 	WorkerManager();
@@ -34,8 +37,34 @@ public:
 	// 增加职工
 	void addWorker();
 
+	// 显示职工
+	void showWorker();
+
+	// 删除职工
+	void deleteWorker();
+
+	// 修改职工信息
+	void modifyWorker();
+
+	// 判断职工是否存在
+	int isExist(int id);
+
+	// 查找职工
+	void findWorker();
+
+	// 统计人数
+	int getWorkerNum();
+
+	// 初始化职工
+	void initWorker();
+
 	// 保存职工信息
 	void save();
+
+	// 职工排序
+	void sortWorker();
+	void bubbleSortA();
+	void bubbleSortD();
 
 	// 退出程序
 	void exitSystem();
