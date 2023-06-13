@@ -72,6 +72,9 @@ public:
 	// 退出程序
 	void exitSystem();
 
+	// 清空文件
+	void cleanFile();
+
 	// 析构函数
 	~WorkerManager();
 };

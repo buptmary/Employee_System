@@ -58,7 +58,7 @@ void WorkerManager::showMenu()
 	std::cout << "*************  4.修改职工信息  *************" << std::endl;
 	std::cout << "*************  5.查找职工信息  *************" << std::endl;
 	std::cout << "*************  6.按照编号排序  *************" << std::endl;
-	std::cout << "*************  7.清空所有文档  *************" << std::endl;
+	std::cout << "*************  7.清空所有数据  *************" << std::endl;
 	std::cout << "********************************************" << std::endl;
 	std::cout << std::endl;
 }
@@ -540,6 +540,43 @@ void WorkerManager::exitSystem()
 	std::cout << "欢迎下次使用!" << std::endl;
 	system("pause");
 	exit(0);
+}
+
+void WorkerManager::cleanFile()
+{
+	std::cout << "确认清空？ (Y/N)" << std::endl;
+
+	char select = 0;
+	std::cin >> select;
+
+	if (select == 'Y' || select == 'y') {
+		// 打开模式 ios::trunc 如果文件存在，则删除文件并重新创建
+		std::ofstream ofs(FILENAME, std::ios::trunc);
+		ofs.close();
+
+		// 双指针结构需要逐个释放每个 Worker 对象，以防内存泄漏
+		if (this->m_WorkArray != nullptr) {
+			for (int i = 0; i < this->m_WorkNum; i++) {
+				if (this->m_WorkArray[i] != nullptr) {
+					delete this->m_WorkArray[i];
+				}
+			}
+
+			// 职工数量更新为0
+			this->m_WorkNum = 0;
+			// 删除 this->m_WorkArray 数组
+			delete[] this->m_WorkArray;
+			// 更新 this->m_WorkArray 指针为空
+			this->m_WorkArray = nullptr;
+			// 存储文件已为空
+			this->m_FileIsEmpty = true;
+		}
+
+		std::cout << "数据清除成功! " << std::endl;
+	}
+
+	system("pause");
+	system("cls");
 }
 
 WorkerManager::~WorkerManager()

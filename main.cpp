@@ -57,7 +57,8 @@ int main()
 		case 6:    // 排序职工
 			wm.sortWorker();
 			break;
-		case 7:    // 清空文件
+		case 7:    // 清空数据文件
+			wm.cleanFile();
 			break;
 		default: system("cls");
 			break;
