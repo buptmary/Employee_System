@@ -89,7 +89,7 @@ void WorkerManager::addWorker()
 			std::string name;
 			int dSelect;
 
-			int maxId = this->m_WorkArray[this->m_WorkNum - 1]->m_Id;
+			int maxId = this->getMaxId();
 			std::cout << "请输入第 " << i + 1 << " 个新职工编号，"
 					  << "推荐为 " << maxId + 1 << " : " << std::endl;
 
@@ -252,7 +252,7 @@ void WorkerManager::modifyWorker()
 			int newDeptId = 0;
 			std::cout << "查找到: " << id << " 号职工，请输入新职工号: " << std::endl;
 			std::cin >> newId;
-			while (isExist(newId) != -1) {
+			while (isExist(newId) != -1 && newId != id) {
 				std::cout << "此id已存在，请重新输入: " << std::endl;
 				std::cin >> newId;
 			}
