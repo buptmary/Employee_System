@@ -9,7 +9,7 @@ void test1()
 {
 	Worker *worker = NULL;
 
-	worker = new Employee(1,"张三",1);
+	worker = new Employee(1, "张三", 1);
 	worker->showInfo();
 	delete worker;
 
@@ -17,7 +17,7 @@ void test1()
 	worker->showInfo();
 	delete worker;
 
-	worker = new Boss(3,"王五",3);
+	worker = new Boss(3, "王五", 3);
 	worker->showInfo();
 	delete worker;
 }
@@ -52,8 +52,10 @@ int main()
 			wm.modifyWorker();
 			break;
 		case 5:    // 查找职工
+			wm.findWorker();
 			break;
 		case 6:    // 排序职工
+			wm.sortWorker();
 			break;
 		case 7:    // 清空文件
 			break;
