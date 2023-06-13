@@ -23,7 +23,6 @@ protected:
 	std::string m_Name;   // 职工姓名
 	int m_DeptId;    // 职工所在部门名称编号
 
-
 public:
 	// 显示个人信息
 	virtual void showInfo() = 0;
@@ -34,6 +33,8 @@ public:
 	// 声明 WorkerManager 类的 save() 方法为友元
 	friend class WorkerManager;
 
+	// 添加虚析构函数
+	virtual ~Worker() = default;
 };
 
 #endif //WORKER_H
