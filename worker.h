@@ -30,7 +30,7 @@ public:
 	// 获取岗位名称
 	virtual std::string getDeptName() = 0;
 
-	// 声明 WorkerManager 类的 save() 方法为友元
+	// 声明 WorkerManager 类为友元
 	friend class WorkerManager;
 
 	// 添加虚析构函数

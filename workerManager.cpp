@@ -582,6 +582,12 @@ void WorkerManager::cleanFile()
 WorkerManager::~WorkerManager()
 {
 	if (this->m_WorkArray != nullptr) {
+		for (int i = 0; i < this->m_WorkNum; i++) {
+			if (this->m_WorkArray[i] != nullptr) {
+				delete this->m_WorkArray[i];
+				this->m_WorkArray = nullptr;
+			}
+		}
 		delete[] this->m_WorkArray;
 		this->m_WorkArray = nullptr;
 	}
